@@ -36,19 +36,19 @@ This project is a simple HTML-based website that showcases some of the most icon
 
 ## Screenshots
 
-*Home Section*
+- **Home Section** 
 <img src="home.PNG" alt="Home" width="600">
 
 
-*Places Section*
+- **Places Section**
 <img src="place.PNG" alt="places" width="600">
 
 
-*Contact*
+-**Contact**
 <img src="contact.PNG" alt="contact" width="600">
 
 
-*responsiveness*
+- **responsiveness**
 <img src="home1.PNG" alt="home1" width="350">     <img src="place1.PNG" alt="place1" width="350">
 
 

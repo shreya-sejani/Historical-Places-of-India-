@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Historical Places In India</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/android-chrome-512x512.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        *{
+            margin: 0;
+            border: 0;
+            box-sizing:border-box;
+            font-family: 'Josefin Slab', serif;
+        }
+        .back{
+            background-image: linear-gradient(rgba(0, 0, 0, 0.836),rgba(0, 0, 0, 0.507)), url(https://upload.wikimedia.org/wikipedia/commons/b/bb/Man_Singh_Palace_in_Gwalior.jpg); 
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            padding-top: 20vh;
+            padding-bottom: 5vh;
+        }
+        
+        header{
+            position: fixed;
+            width: 100%;
+            height: 15vh;
+            background-color: rgba(0, 0, 0, 0.85);
+            color: white;
+            display: flex;
+            text-transform: capitalize;
+            justify-content:space-between;
+            align-items: center;
+            padding-left: 5vw;
+            padding-right: 5vw;
+            z-index: 10;
+        }
+        .logo {
+            flex-basis: 60%;
+        }
+        header nav{
+            display: flex;
+            flex-basis: 40%;
+            justify-content: space-evenly;
+            
+        }
+        header nav a{ 
+            font-size: 20px;
+            text-decoration: none;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        header nav a:hover {
+            color: #ff9f43;
+            transform: scale(1.1);
+            text-decoration: underline;
+        }
+        
+        header .logo h1{
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        header .logo h1:hover {
+            color: #ff9f43;
+            transform: scale(1.1);
+        }
+
+        footer{
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            width: 100%;
+            left: 0;
+            bottom: 0;
+            padding: 3vh;
+            height: 5vh;
+            background-color: rgba(0, 0, 0, 0.37);
+            color: #fff;
+            text-transform: capitalize;
+            justify-content: center;
+            align-items:center;
+            text-align: center;
+        }
+
+        .main{
+            width: 100%;
+            height: 100vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.836),rgba(0, 0, 0, 0.507)), url(https://upload.wikimedia.org/wikipedia/commons/b/bb/Man_Singh_Palace_in_Gwalior.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            background-attachment: fixed;
+        }
+        .main section h3{
+            font-size: 35px;
+            font-weight: 200;
+            letter-spacing: 3px;
+            text-shadow: 1px 1px 2px black;
+        }
+        .main section h1{
+            padding: 30px 0 20px 0;
+            font-size: 55px;
+            font-weight: 700;
+            text-shadow: 2px 1px 5px black;
+        }
+        .main section p{
+           font-size: 25px;
+           color: #eee;
+           word-spacing: 2px;
+           margin-bottom: 25px;
+           text-shadow: 1px 1px 1px black;
+        }
+        .main section #buttons{
+            padding: 15px 30px;
+            border-radius: 4px;
+            outline: none;
+            font-size: 13px;
+            font-weight: 500;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+        section .b1{
+            background: #fff;
+            color: #000;
+        }
+        section .b2{
+            background: #00b894;
+            color: #fff;
+        }
+
+        .container:nth-child(even){
+            background-color: #ecececaf;
+        }
+        .container:nth-child(odd){
+            background-color: rgba(0, 0, 0, 0.705);
+            color: #ececec;
+        }
+        .container{
+            padding: 20px 40px 20px 40px;
+            margin:0px 40px 20px 40px; 
+            border: 1px solid lightgray;
+            border-radius: 4px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            text-align: center;  
+        }
+
+        .place{
+            flex-basis: 60%;
+        }
+        .place-img{
+            flex-basis: 40%;
+            margin: auto;
+        }
+        .place-img img{
+            width: 80%;
+            border-radius: 5px;
+        }
+        .place-img:nth-child(odd) img{
+            box-shadow: 1px 1px 6px #000000;
+        }
+        .place-img:nth-child(even) img{
+            box-shadow: 1px 1px 6px #ffffff;
+        }
+        .place h1{
+            margin-bottom: 20px;
+            font-weight: 400;
+            position: relative;
+            z-index: 1;
+            display: inline-block;
+        }
+        .place:nth-child(odd) h1{
+            color: #009688;
+        }
+        .place:nth-child(even) h1{
+            color: #740081;
+        }
+        .place h1::after{
+            content: '';
+            width: 50px;
+            height: 35px;
+            position: absolute;
+            top : -17px;
+            left : 0;
+            z-index : -1;
+            transform : rotate(10deg);
+            border-top-left-radius : 35px;
+            border-bottom-right-radius : 35px;
+        }
+        .place:nth-child(even) h1::after{
+            background: linear-gradient(#60006b, #ececec41);
+        }
+        .place:nth-child(odd) h1::after{
+            background: linear-gradient(#019587,#000000);
+        }
+        .place-desc{
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        .place-text p{
+            text-align: justify;
+            line-height:initial;
+        }
+        .variable:after{
+            content: '';
+            animation: changetext 20s infinite linear;
+            color: #00b894;
+        }
+        @keyframes changetext {
+            0%{content: "Taj Mahal";}
+            10%{content: "Agra Fort";}
+            20%{content: "Red Fort";}
+            30%{content: "Qutub Minar";}
+            40%{content: "Fatehpur Sikri";}
+            50%{content: "Hawa Mahal ";}
+            60%{content: "Amer Fort";}
+            70%{content: "India Gate";}
+            80%{content: "Golden Temple";}
+            90%{content: "Ajanta Elora Caves";}
+            100%{content: "Taj Mahal";}
+        }
+
+
+        #feature{
+            width: 100%;
+            padding: 70px 0;
+            padding-top: 25vh;
+        }
+        .title-text{
+            text-align: center;
+            padding-bottom: 70px;
+        }
+        .title-text p{
+            margin: auto;
+            font-size: 30px;
+            color: #009688;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            display: inline-block;
+        }
+        .title-text p::after{
+            content: '';
+            width: 50px;
+            height: 35px;
+            background: linear-gradient(#019587,#fff);
+            position: absolute;
+            top: -20px;
+            left: 0;
+            z-index: -1;
+            transform: rotate(10deg);
+            border-top-left-radius: 35px;
+            border-bottom-right-radius: 35px;
+        }
+        .title-text h1{
+            font-size: 50px;
+        }
+        .feature-box{
+            width: 80%;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+        .features{
+            flex-basis: 50%;
+            
+        }
+        .features-img{
+            flex-basis: 50%;
+           
+        }
+        .features-img img{
+            width: 70%;
+            border-radius: 5px;
+        }
+        .features h1{
+            text-align: left;
+            margin-bottom: 10px;
+            font-weight: 300;
+            color: #009688;
+        }
+        .features-desc{
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .social-icons {
+            color: black;
+            font-size: 20px;
+            margin: 0 10px;
+            text-decoration: none;
+       }
+       .social-icon:hover {
+           color: #ff9f43;
+       }
+        
+        section h3{
+            font-size: 35px;
+            font-weight: 200;
+            letter-spacing: 3px;
+            text-shadow: 1px 1px 2px black;
+        }
+
+        section h1{
+            padding: 30px 0 20px 0;
+            font-size: 55px;
+            font-weight: 700;
+            text-shadow: 2px 1px 5px black;
+        }
+
+        section p{
+            font-size: 20px;
+            color: black;
+            word-spacing: 2px;
+            padding-bottom: 25px;
+            text-align: justify;
+        }
+        section a{
+            text-decoration: none;
+            color: #000000;
+        }
+
+        @media (max-width: 850px) {
+            .container {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px;
+            }
+
+            .place {
+                max-width: 100%;
+                margin-top: 20px;
+            }
+
+            .place-img {
+                max-width: 100%;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+            .place-desc {
+                margin-left: 0;
+            }
+            .place-text{
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+        }
+    
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo"><h1 class="fadeIn delay-2s">Historical Places In India</h1></div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#places">Places</a>
+            <a href="#feature">About</a>
+            <a href="#feature">Contact</a>
+        </nav>
+    </header>
+    
+    <div id="home" class="main">
+        <section>
+            <h3 style="text-align: center;">Welcome To Our India!</h3>
+            <h1 style="text-align: center;">Let's Visit <span class="variable"></span></h1>
+            <p style="text-align: center;">Visiting once is not enough...!</p>
+            <a href="#" id="buttons" class="b1">Learn More</a>
+            <a href="#" id="buttons" class="b2">Subscribe</a>
+        </section>
+    </div>
+
+    <div id="places" class="back">
+        <div class="container"> 
+            <div class="place">
+                <h1>Taj mahal</h1>
+                <div class="place-desc">
+                    <div class="place-text">
+                    <p>The Taj Mahal, one of the seven wonders of the world, is situated in Agra along the Yamuna 
+                        River. The Mughal Emperor Shah Jahan erected it as a monument to honour Mumtaz Mahal, his third 
+                        wife. The grave of Shah Jahan himself is also located there. The Taj Mahal, which covers an 
+                        area of around 42 acres, began construction in 1631 and took 17 years to complete in 1648! Taj 
+                        Mahal, one of the most stunning structures in the world, was built in the 17th century using 
+                        only white marble. Throughout the course of a year, more people than Agra's whole population 
+                        pass through the beautiful gates to get a sight of this magnificent structure! The Taj Mahal, a UNESCO World Heritage Site, signifies "Crown of Palaces" in Persian.   The 
+                        entrance features water channels and fountains, making the monument even more magnificent. This 
+                        breathtaking spectacle's reflection in the Yamuna is nearly poetry in its perfection!</p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="place-img">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Taj_Mahal%2C_Agra%2C_India_edit3.jpg" alt="">
+            </div>
+        </div>
+        <div class="container">
+            <div class="place-img">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Agra_Fort_14.JPG" alt="">
+            </div>
+            <div class="place">
+                <h1>Agra Fort</h1>
+                <div class="place-desc">
+                    <div class="place-text">
+                        <p>The Agra Fort in Uttar Pradesh is one of India's oldest historical sites. The 16th century 
+                            Agra Fort, a true example of beautiful Mughal architecture, was erected during Akbar's rule and 
+                            is also a UNESCO World Heritage Site. It was the main residence of the Mughal emperors until 
+                            1638, when the capital was moved from Agra to Delhi. The fort's structure also includes numerous architectural types, as well as beautiful 
+                            marble and sandstone artwork. It is located around 2.5 kilometres northwest of the Taj Mahal.</p>
+                    </div>
+                </div>
+            </div> 
+        </div>
+        <div class="container">
+            <div class="place">
+                <h1>Red Fort</h1>
+                <div class="place-desc">
+                    <div class="place-text">
+                        <p>The Red Fort in Delhi is a must-see among India's well-known historical sites. The Red Fort, 
+                            also known as the Lal Qila, was built in the 17th century under Shah Jahan's rule.
+                            The Red Fort was built with enormous red sandstone walls in the Mughal architectural style. Its 
+                            features include its lovely geometric gardens, spectacular balconies, and rich entertainment 
+                            halls. The complex's two most well-known buildings are the smaller Hall of Private Audience 
+                            (Diwan-i-Khas), which features a pavilion made of white marble, and the larger Hall of Public 
+                            Audience (Diwan-i-Am), which has 60 red sandstone pillars supporting a flat roof.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="place-img">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Red_fort_-_front_view.JPG" alt="">
+            </div>
+        </div>
+        <div class="container">
+            <div class="place-img">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/The_Qutab_Minar_-_A_landscape_shot_%CC%83_Shyam.jpg" alt="">
+            </div>
+            <div class="place">
+                <h1>Qutub Minar</h1>
+                <div class="place-desc">
+                    <div class="place-text">
+                        <p>The Qutub Minar in Delhi is one of India's top ten historical sites. The Qutub Minar, also 
+                            known as the Victory Tower and a UNESCO World Heritage Site, is the tallest brick minaret in 
+                            the entire world, rising tall at a height of 72.5 metres. The Qutub Minar is made of red 
+                            sandstone and marble, and it features numerous exquisite sculptures.
+                            After Delhi's last Hindu emperor was defeated, the Qutub Minar was constructed in the late 
+                            1100s to commemorate Muslim dominance in the city. Qutab-ud-din Aibak started the building, and 
+                            his successors Iltutmish and Firoz Shah Tughlak continued it.</p>
+                    </div>
+                </div>
+            </div> 
+        </div>
+        <div class="container">
+            <div class="place">
+                <h1>Fatehpur Sikri</h1>
+                <div class="place-desc">
+                    <div class="place-text">
+                        <p>Fatehpur Sikri, a town in Uttar Pradesh's Agra district, is a gem of an architectural site and one of the most gorgeous historical locations in all of India. Fatehpur Sikri, a site that has been designated as a UNESCO World Heritage Site, was established by the Mughal Emperor Akbar in the late 16th century and is primarily composed of red sandstone. The entire city of Fatehpur Sikri is fortified, and it currently features Jodha Bai's Palace, Buland Darwaza, Jama masjid, Ibadat Khana, the Tomb of Salim Chishti, among other attractions.
+                            </p>
+                    </div>
+                </div>
+            </div>
+            <div class="place-img">
+                <img src="https://www.fabhotels.com/blog/wp-content/uploads/2019/05/Fatehpur-Sikri_600.jpg" alt="">
+            </div>
+        </div>
+        <div class="container">
+            <div class="place-img">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Hawa_Mahal_in_Pink_City_Jaipur_Rajasthan.jpg" alt="">
+            </div>
+            <div class="place">
+                <h1>Hawa Mahal </h1>
+                <div class="place-desc">
+                    <div class="place-text">
+                        <p>Along with being a notable landmark of Rajasthan, the Hawa Mahal in Jaipur is one of the best historical locations in all of India. The 5-story Hawa Mahal, which dates to the 18th century, is a building that looks out over Jaipur's busy streets. Moreover, the Rajput, Mughal, and Islamic architectural styles have been combined to create it. The Hawa Mahal was built by Maharaja Sawai Pratap Singh in such a way that the tiny windows here allow winds to enter the palace and keep it cool during the sweltering months.
+                            </p>
+                    </div>
+                </div>
+            </div> 
+        </div>
+        <div class="container">
+            <div class="place">
+                <h1>Amer Fort</h1>
+                <div class="place-desc">
+                    <div class="place-text">
+                        <p>Amer Fort in Jaipur is another of India's most well-known historical sites. This fort, one of the oldest in the nation, was built by Maharaja Man Singh in the sixteenth century. It boasts ornately carved walls, lavish ceilings, several courtyards, and magnificent entryways. The Amer Fort, a recognised UNESCO World Heritage Site, also has a museum, garden, restaurant, and other amenities. One of the fort's most notable features are its winding staircases and labyrinthine tunnels. In the past, a number of Rajput kings also used the Amer Fort as their primary residence.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="place-img">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/76/Amer_Fort_-_Jaipur_India.jpg" alt="">
+            </div>
+        </div>
+        <div class="container">
+            <div class="place-img">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/India_Gate_.jpg" alt="">
+            </div>
+            <div class="place">
+                <h1>India Gate </h1>
+                <div class="place-desc">
+                    <div class="place-text">
+                        <p>India Gate may be the most well-known historical site in the country. One of the largest war memorials in all of India, this sandstone-granite arch gate is a well-known feature of Delhi. It is surrounded by lush lawns and gardens. The India Gate, also called the All-India War Memorial, is a monument that stands along Rajpath and is sometimes compared to the Arc de Triomphe in France, the Gateway of India in Mumbai, and the Arch of Constantine in Rome. The 82,000 Indian and British soldiers who gave their lives in the First World War and the Third Anglo-Afghan War are honoured by this 42-meter-high memorial. </p>
+                    </div>
+                </div>
+            </div> 
+        </div>
+        <div class="container">
+            <div class="place">
+                <h1>Golden Temple</h1>
+                <div class="place-desc">
+                    <div class="place-text">
+                        <p>The renowned Golden Temple, which is situated in the Punjab city of Amritsar, is another of the top 10 historical sites in India. The Golden Temple, also known as Sri Harmandir Sahib, is the most significant Sikh sacred shrine and honours peace, tranquilly, and fraternity. The gurdwara, which is two stories tall, has a distinctive domed architecture, with the dome portion entirely covered in pure gold and the remainder in white marble. You can enjoy the daily Langar here in addition to witnessing significant sights like the Akal Takht, Sikh History Museum, Clock Tower, and Teja Singh Samundri Hall, which draw thousands of worshippers and tourists each day.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="place-img">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/17/Golden_temple_amritsar_sahib_punjab.jpg" alt="">
+            </div>
+        </div>
+        <div class="container">
+            <div class="place-img">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Ellora_Caves%2C_India%2C_Kailasanatha_Temple_2.jpg" alt="">
+            </div>
+            <div class="place">
+                <h1>Ajanta Elora Caves </h1>
+                <div class="place-desc">
+                    <div class="place-text">
+                        <p>The Ajanta and Ellora Caves, which are close to Aurangabad in Maharashtra, are not just UNESCO World Heritage Sites but also India's greatest historical locations. These caves, which are filled with exquisite murals, paintings, sculptures, Buddhist monasteries, and Hindu and Jain temples, are said to represent some of the earliest examples of Buddhist construction. The Ellora Caves are more elaborate and are 34 in number, dating from between the 6th and 11th centuries, whilst the Ajanta Caves are 29 in number and come from between the 2nd and 6th centuries.</p>
+                    </div>
+                </div>
+            </div> 
+        </div>       
+        
+    </div> 
+
+    <section id="feature">
+        <div class="title-text">
+            <p>Contact</p>
+            <h3>Shreya Sejani</h3>
+        </div>
+        <div class="feature-box">
+            <div class="features-img">
+                <img src="shreya.jpg" alt="">
+                
+            </div>
+            <div class="features">
+                <div class="features-desc">
+                    <div class="feature-text">
+                        <p>Hello! I’m Shreya Sejani, a computer science student with a passion for web development and a deep appreciation for history. This website is a blend of my technical skills and my fascination with the rich heritage of India.</p>
+                        <p>With a background in HTML, CSS, JavaScript, and various frameworks like AngularJS and React, I enjoy creating interactive and informative web experiences. My journey into web development has allowed me to work on diverse projects, including developing a shopping website and converting CRM systems to modern frameworks.</p>
+                        <p>Thank you for visiting my site! Feel free to connect with me through LinkedIn or GitHub.</p>
+                        <p>
+                            <div class="social-icons">
+                                <p><a href="https://www.linkedin.com/in/shreya-sejani-650956262" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i> : www.linkedin.com/in/shreya-sejani-650956262 </a></p>
+                                <p><a href="https://github.com/shreya-sejani" target="_blank" class="social-icon"><i class="fab fa-github"></i> : github.com/shreya-sejani</a></p>
+                                <p><a href="mailto:shreyasejani7@gmail.com" target="_blank" class="social-icon"><i class="fa fa-envelope"></i> : shreyasejani7@gmail.com</a></p>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <footer>Designed and Developed By Shreya Sejani</footer>
+
+</body>
+</html>

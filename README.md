@@ -44,11 +44,11 @@ This project is a simple HTML-based website that showcases some of the most icon
 <img src="place.PNG" alt="places" width="600">
 
 
--**Contact**
+- **Contact**
 <img src="contact.PNG" alt="contact" width="600">
 
 
-- **responsiveness**
+- **Responsiveness**
 <img src="home1.PNG" alt="home1" width="350">     <img src="place1.PNG" alt="place1" width="350">
 
 

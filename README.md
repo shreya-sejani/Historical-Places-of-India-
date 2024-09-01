@@ -49,6 +49,7 @@ This project is a simple HTML-based website that showcases some of the most icon
 
 
 - **Responsiveness**
-<img src="home1.PNG" alt="home1" width="350">     <img src="place1.PNG" alt="place1" width="350">
+  
+<img src="home1.PNG" alt="home1" width="200">     <img src="place1.PNG" alt="place1" width="200">
 
 
